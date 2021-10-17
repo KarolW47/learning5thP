@@ -30,21 +30,20 @@ public class Main {
             typedNumber2Nd = scannerForInts.nextInt();
 
             switch (chosenOperation){
-                case 1 -> System.out.println("Restult = " + (typedNumber1St+typedNumber2Nd));
-                case 2 -> System.out.println("Restult = " + (typedNumber1St-typedNumber2Nd));
-                case 3 -> System.out.println("Restult = " + (typedNumber1St*typedNumber2Nd));
-                case 4 -> System.out.println("Restult = " + (typedNumber1St/typedNumber2Nd));
-
+                case 1 -> System.out.println("Result = " + (typedNumber1St+typedNumber2Nd));
+                case 2 -> System.out.println("Result = " + (typedNumber1St-typedNumber2Nd));
+                case 3 -> System.out.println("Result = " + (typedNumber1St*typedNumber2Nd));
+                case 4 -> {
+                    if(typedNumber1St <= 0 || typedNumber2Nd <= 0){
+                        System.out.println("0 is a wrong parameter for this operation!");
+                    }else System.out.println("Result = " + (typedNumber1St/typedNumber2Nd));
+                }
             }
             System.out.println("Next operation? y/n");
             chosenExitOption = scannerForStrings.nextLine();
             if (chosenExitOption.equals("n")){
                 isStillRunning = false;
             }
-
         }
-
-
-
     }
 }
